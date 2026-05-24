@@ -1,0 +1,10 @@
+Business Problem : 
+
+Effective inventory and sales management are critial for optimizing the profitiability in the retail and wholesale industry. Companies need to ensure that they are not incurring losses due to ineffcient pricing, poor inventory turnover, or vendor dependency. They goal of the analysis is to -
+
+1. Identify underperforming brands that require promotional orr pricing adjustments.
+2. Determine top vendors contributing to sales and gross profit.
+3. Analyze the impact of bulk purchasing on unit costs.
+4. assess inventory turnover to reduce holding costs and improve efficiency.
+5. Investigrate the profitability variance between high-performing and low-performing vendors.
+
