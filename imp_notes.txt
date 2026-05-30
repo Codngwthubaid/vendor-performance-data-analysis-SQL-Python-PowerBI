@@ -1,0 +1,7 @@
+practice_1 : In companies the data comes continously, so we want to write the scripts for continuous ingestion of data, like the script runs in every 15 mins automatically and adds (append) the data into database
+
+practice_2 : Create a logs folder and always append your logs at insert_data_into_db.log file.
+
+practice_3 : Use interactive way to display the output - [from IPython.display import display] use this instead of print() to display the output in a better way
+
+practice_4 : Now, for this project we want to select a specific vendor and see all the connections of of data for that vendor in all tables to get more and better insights.

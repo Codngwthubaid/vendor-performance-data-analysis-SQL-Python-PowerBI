@@ -40,3 +40,6 @@ Thumbs.db
 
 # Power BI cache
 *.pbix.cache
+
+# ignore xampp_config.py
+xampp_config.py

@@ -1,0 +1,37 @@
+p1 : the purchases table contians actual purchase data, including the date of purchase, products(brands) purchased by vendors the amount paid (in dollors), and the quantity purchased.
+
+p2 : the purchase_price column drived from the purchase_price table, which provides product-wise actual and purchased prices. the combination of vendor and brand are unqiue in this table
+
+p3 : the vendor_invoice table aggregates data from purchase table and summarizing quantity and dollar amounts, along with an additional column of freight. and this table maintains unqiueness based on vendors and PO number
+
+p4 : the sales table captures sales transaction, detailings the brands purchased by vendors, the quantity sold, the selling price, and the revenue earned
+
+p5 : as the data is distributed into multiple tables, we need to create a summary table containing ---
+1. purchase transaction made by vendors
+2. sales transaction data
+3. freight costs (delivery charges) for each vendor
+4. actual product prices from vendor
+
+
+p6 : create a query "vendor_sales_summary" which provides us vendor-wise sales and purchase summary and it is valuable for following reasons ---
+--- "PERFORMANCE OPTIMIZATION" --- 
+1. the query involves heavy joins and aggregates on large datasets like sales and purchases
+2. storing the pre-aggregated results to avoids repeated expensive computations
+3. helps in analyzing sales, purchase, and pricing for different vendors and brands
+4. future benefits of storing this data for faster dashboarding ad reporting 
+5. instead of running expensive queries each time, dashboards can fetch from vendor_sales_summary
+
+
+### Collecting and present inconsistencies (NOT DONE)
+1. Volume present in : string -> SOlUTION : convert into float64 (if decimal values present) if not then int64
+2. TotalSalesQuantity, TotalSalesDollars, TotalSalesPrice, TotalExciseTax = 178 null values present -> SOLUTION : filled with 0
+3. VendorName have inconsistent spacing -> SOLUTION : remove extra spacing throw strip()
+### Handled all inconsistencies (DONE)
+
+
+### Creating some new columns for better analysis such as : 
+1. GrossProfit
+2. ProfitMargin
+3. StockTurnOver
+4. SalesToPurchaseRatio
+
