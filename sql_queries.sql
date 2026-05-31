@@ -1,5 +1,8 @@
 USE vendor_analysis;
 
+select COUNT(Description) from vendor_sales_summary;
+
+
 -- SELECT 
 -- 	VendorNumber, 
 --     ROUND(SUM(Freight),2) AS Total_Freight 

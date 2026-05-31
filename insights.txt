@@ -35,3 +35,40 @@ p6 : create a query "vendor_sales_summary" which provides us vendor-wise sales a
 3. StockTurnOver
 4. SalesToPurchaseRatio
 
+
+p7 : after doing EDA on entire RAW data, now we want to examined the various tables in the database to identify key variables, understand their relationships, and determine which ones should be included in the final analysis. Now, in this phase of EDA we will analyze the resultant table to gain insights into the distribution of each column, this will help us understand data patterns, identify anomalies and ensure data quality before proceeding to the further analysis
+
+p8 : after EDA on final data ->
+
+--- negative and zero values --- 
+1. GROSS PROFIT : min value is -52002.78, indicating losses. Some products or transactions may be selling at a loss due to high costs orr selling at discounts lower than the purchased price
+2. PROFIT MARGIN : has a min of (-∞), which suggests cases where revenue is zero orr even lower than costs
+3. TOTAL SALES QUANTITY & SALES DOLLARS : min value is 0, meaning some products were purchased but never sold. these could be slow-moving orr obsolete (no longer use) stock
+
+--- outliers indicated by high standard deviations ---
+1. PURCHASE & ACTUAL PRICE : the max values(5681.81 & 7499.99), are significantly higher than the mean (24.39 & 35.64), indicating potential premium products.
+2. FREIGHT COST : hugh variations, from 0.09  to 257032.07, suggests logistics inefficiencies or bulk shipments.
+3. STOCK TURNOVER : ranges from 0 to 274.5, implying some products sell extremely fast while other remain in stock indefinitely. Values more than 1 indicates that sold quantity for the product is higher than purchased due to either sales are being fullfilled from older stock
+
+
+p9 : we have alot of outliers in the images, but we dont remove all of them, we have the possibility of these outliers are comes from premium brands so in future we also have the possibility to find out those brands, we only remove inconsistence outliers which values are less then 0 (GrossProfit, ProfitMargin) 
+
+
+p10 : after seeing correlation heatmap we understand these points ->
+1. purchase_price has weak correlation with TotalSalesDollars (-0.012) and GrossProfit(-0.016), suggesting that price variations don't significantly impact sales revenue or profit
+2. strong correlation between total purchase quantity and sales quantity(0.999), confirming efficient inventory turnover.
+3. negative correlation between ProfitMargin & total TotalSalesPrice (-0.179) suggests that as sales price increases, margin decreases, possibily due to competitive pricing pressures 
+4. StockTurnOver has weak negative correlation with both GrossProfit (-0.038) and ProfitMargin (-0.555), indicating that faster turnover doesnot necessarily result in higher profitability 
+
+
+p11 : impact of bulk purchasing on unit price ->
+1. vendors buying in bulk (Large Order Size) get the lowest unit price ($10.78/unit), means higher mergins if they can manage inventoryy efficietly
+2. the price difference between small and large orders is (~72% reduction in unit cost)
+3. bulk pricing strategies successfully encourage vendors to purchase in larger volumes, leading to higher overall sales
+
+
+p12 : Confidence Interval Comparison ->
+1. the confidence interval for low-performaning vendors (0.41 to 0.43) is significantly higher than the top-performaning vendors (0.31 to 0.32)
+2. this suggests that the vendors with lower sales maintain a higher profit margins, potentially due to premium pricing orr lower operational cost
+3. FOR HIGH-PERFORMAING VENDORS : if they aim to improve their profitability, they could explore selective price adjustments, cost optimization orr enhance bundling strategies
+4. FOR LOW-PERFORMAING VENDORS : despite higher margins, their low sales volume mmight indicate a need for better marketing, competitive pricing, or improve distribution strategies

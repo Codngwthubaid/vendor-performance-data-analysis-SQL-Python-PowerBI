@@ -3,7 +3,10 @@ import pymysql
 from sqlalchemy import create_engine
 import logging
 import time
+import os
 from datetime import datetime
+
+os.makedirs('logs', exist_ok=True)
 
 logging.basicConfig(
     filename='logs/vendor_pipeline.log',
@@ -51,12 +54,13 @@ def create_vendor_summary(conn):
             VendorNumber,
             VendorName,
             Brand,
+            Description,
             PurchasePrice,
             SUM(Quantity) AS TotalPurchasedQuantity,
             ROUND(SUM(Dollars), 2) AS TotalPurchasedDollars
         FROM purchases
         WHERE PurchasePrice > 0
-        GROUP BY VendorNumber, VendorName, Brand, PurchasePrice
+        GROUP BY VendorNumber, VendorName, Brand, Description, PurchasePrice
     ),
 
     PurchaseSummary AS (
@@ -64,6 +68,7 @@ def create_vendor_summary(conn):
             ap.VendorNumber,
             ap.VendorName,
             ap.Brand,
+            ap.Description,
             ap.PurchasePrice,
             pp.Volume,
             pp.Price AS Actual_Price,
@@ -90,6 +95,7 @@ def create_vendor_summary(conn):
         ps.VendorNumber,
         ps.VendorName,
         ps.Brand,
+        ps.Description,
         ps.PurchasePrice,
         ps.Actual_Price,
         ps.Volume,
@@ -118,6 +124,7 @@ def clean_data(df):
     logging.info("Starting data cleaning")
 
     df['VendorName'] = df['VendorName'].str.strip()
+    df['Description'] = df['Description'].str.strip()
 
     sales_null_cols = ['TotalSalesQuantity', 'TotalSalesDollars',
                        'TotalSalesPrice', 'TotalExciseTax']
