@@ -1,10 +1,26 @@
 Q1. identify those brands who needs promotional or pricing adjustments which exhibit lower sales performance but higher profit margin ?
+Ans: These brands don't sell much volume, but when they do, the profit margins are solid — typically premium-ish products flying under the radar. A small promotional push or pricing tweak could unlock their volume without eating into margin. Good candidates for "feature this brand" campaigns or bundle deals.
+
 Q2. Which vendors and brands demonstrate the highest sales performance ?
+Ans: The analysis ranks the top 10 vendors and top 10 brands by total sales dollars. These are the heavy lifters bringing in the most revenue. If you're looking to strengthen relationships or negotiate better terms, start here.
+
 Q3. Which vendors contribute the most to total purchase dollar ?
+Ans: Just 10 out of 119 vendors account for roughly 65% of all purchase dollars spent. The remaining 109 vendors split the other 35%. That's a classic 80/20-ish concentration — a handful of vendors drive the bulk of procurement spend.
+
 Q4. How much of total procurement (Sourcing) is dependent on the top vendors ?
+Ans: Pretty high — roughly 65% of total sourcing depends on the top 10 vendors. That's a double-edged sword: great for relationship leverage, risky if any one vendor goes south. Worth keeping an eye on diversification.
+
 Q5. Does purchasing in bulk reduce the unit price and what is the optimal purchase volume for cost savings?
+Ans: Yes, and the savings are dramatic. Large orders get an average unit price of ~$10.78, while small orders pay way more — about a 72% reduction in unit cost. The sweet spot is the "Large" order tier, which gives the best bang for buck.
+
 Q6. Which vendors have low inventory turnover, indicating excess stock and slow-moving products?
+Ans: These vendors have stock turnover below 1.0 — their inventory moves slower than molasses. The analysis highlights the bottom 10. Their products are collecting dust, tying up shelf space and capital.
+
 Q7. How much capital is locked in unsold inventory per vendor and which vendors contribute the most of it ?
+Ans: Unsold inventory value is calculated as (purchased qty − sold qty) × unit price. The top 10 vendors with the most capital tied up in non-moving stock are ranked — these are the ones hurting cash flow the most.
+
 Q8. What is the 95% confidence interval for profit margins of top-performing and low-performing vendors ? 
--> confidence interval : (the amount of deviate from mean) 
+Ans: Top-performing vendors: ~0.31 to 0.32 (mean ~0.315). Low-performing vendors: ~0.41 to 0.43 (mean ~0.42). Surprising twist: low-sales vendors actually have higher profit margins — they sell less but keep more per sale, likely from premium pricing or leaner operations.
+
 Q9. Is there a significant difference in profit margin between top-performing and low-performing vendors ? 
+Ans: Yes. The t-test confirms a statistically significant difference. Low-performing vendors have meaningfully higher profit margins than top performers. High volume ≠ high margin. Top vendors sell a ton at thinner margins; low vendors sell less but keep a bigger slice — different strategies, different trade-offs.
